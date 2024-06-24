@@ -1,4 +1,4 @@
-﻿using ParkingManagementData;
+using ParkingManagementData;
 using ParkingManagementModels;
 using System;
 
@@ -12,46 +12,58 @@ namespace Client
             while (active)
             {
                 {
-                    Console.WriteLine("- - - - - - - - - - - - - -");
-                    Console.WriteLine("Kurt's Parking Management System");
+                    Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
+                    Console.WriteLine("|Kurt's Parking Management System|");
+                    Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                     Console.WriteLine("What's good in the hood?");
                     Console.WriteLine("1.Car wants to Park");
                     Console.WriteLine("2.Car wants to go Out");
                     Console.WriteLine("3.Color and PlateNumber of the Cars that Parked");
+                    Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
+
 
                     Console.WriteLine("Enter the number of your choice:");
                     string number = Console.ReadLine();
-                    Console.WriteLine("- - - - - - - - - - - - - -");
 
                     if (number == "1")
                     {
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                         Console.WriteLine("What is the plateNumber?");
-                        Console.WriteLine("- - - - - - - - - - - - - -");
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                         string plateNum = Console.ReadLine();
 
+
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                         Console.WriteLine("What is the color of the Car?");
-                        Console.WriteLine("- - - - - - - - - - - - - -");
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                         string colorCar = Console.ReadLine();
                         SqlDbData.AddUser(plateNum, colorCar);
 
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                         Console.WriteLine("Okay Cool! Heres the parking ticket!");
-                        Console.WriteLine("- - - - - - - - - - - - - -");
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
 
                     }
 
                     else if (number == "2")
                     {
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                         Console.WriteLine("What is the plateNumber?");
-                        Console.WriteLine("- - - - - - - - - - - - - -");
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                         string plateNum = Console.ReadLine();
                         SqlDbData.DeleteUser(plateNum);
 
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                         Console.WriteLine("Okay Cool! The Data of that Car is Deleted!");
-                        Console.WriteLine("- - - - - - - - - - - - - -");
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                     }
                     else if (number == "3")
                     {
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
+                        Console.WriteLine("Okay, heres the plate number and the color of the car that parked:");
+                        Console.WriteLine("");
                         GetUsers();
+                        Console.WriteLine("- - - - - - - - - - - - - - - - - - ");
                     }
 
                 else
