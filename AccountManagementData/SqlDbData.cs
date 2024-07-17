@@ -11,11 +11,11 @@ namespace ParkingManagementData
     public class SqlDbData
     {
         static string connectionString
-        = "Data Source =MHACEE\\SQLEXPRESS; Initial Catalog = ParkingManagement; Integrated Security = True;";
-
+       // = "Data Source =MHACEE\\SQLEXPRESS; Initial Catalog = ParkingManagement; Integrated Security = True;";
+       = "Server=tcp:20.195.15.75,1433;Database=ParkingManagement;User Id=sa;Password=Kurtjerome11";
         static SqlConnection sqlConnection = new SqlConnection(connectionString);
 
-        public static void Connect()
+        static public void Connect()
         {
             sqlConnection.Open();
         }
@@ -85,7 +85,7 @@ namespace ParkingManagementData
         public static void DeleteUser(string plateNum)
         {
             string deleteStatement = $"DELETE FROM users WHERE plateNum = @plateNum";
-            SqlCommand deleteCommand = new SqlCommand(deleteStatement , sqlConnection);
+            SqlCommand deleteCommand = new SqlCommand(deleteStatement, sqlConnection);
             sqlConnection.Open();
 
             deleteCommand.Parameters.AddWithValue("@plateNum", plateNum);

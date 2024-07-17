@@ -19,7 +19,7 @@ namespace ParkingManagementData
 
         public void AddUser(User user)
         {
-           users.Add(user);
+            users.Add(user);
         }
 
         public void UpdateUser(User user)
@@ -34,5 +34,11 @@ namespace ParkingManagementData
                 }
             }
         }
+
+        public int DeleteUser(User user)
+        {
+            return DeleteUser(user);
+        }
     }
+
 }

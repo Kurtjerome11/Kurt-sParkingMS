@@ -5,15 +5,15 @@
 
         UserGetServices getservices = new UserGetServices();
 
-        public bool CheckIfUserNameExists(string username)
+        public bool CheckIfUserNameExists(string plateNum)
         {
-            bool result = getservices.GetUser(username) != null;
+            bool result = getservices.GetUser(plateNum) != null;
             return result;
         }
 
-        public bool CheckIfUserExists(string username, string password)
+        public bool CheckIfUserExists(string plateNum, string colorCar)
         {
-            bool result = getservices.GetUser(username, password) != null;
+            bool result = getservices.GetUser(plateNum, colorCar) != null;
             return result;
         }
 

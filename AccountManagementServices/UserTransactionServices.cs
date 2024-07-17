@@ -12,12 +12,20 @@ namespace ParkingManagementServices
         {
             bool result = validationServices.CheckIfUserNameExists(user.plateNum);
 
+
             if (result)
             {
                 userData.AddUser(user);
             }
 
-            return result ;
+            return result;
+        }
+
+        public bool CreateUser(string plateNum, string colorCar)
+        {
+            User user = new User { plateNum = plateNum, colorCar = colorCar };
+
+            return CreateUser(user);
         }
 
         public bool UpdateUser(User user)
@@ -32,6 +40,30 @@ namespace ParkingManagementServices
             return result;
         }
 
+        public bool UpdateUser(string plateNum, string colorCar)
+        {
+            User user = new User { plateNum = plateNum, colorCar = colorCar };
 
+            return UpdateUser(user);
+        }
+
+        public bool DeleteUser(User user)
+        {
+            bool result = false;
+
+            if (validationServices.CheckIfUserNameExists(user.plateNum))
+            {
+                result = userData.DeleteUser(user) > 0;
+            }
+
+            return result;
+        }
+
+        public bool DeleteUser(string plateNum, string colorCar)
+        {
+            User user = new User { plateNum = plateNum, colorCar = colorCar };
+
+            return UpdateUser(user);
+        }
     }
 }
